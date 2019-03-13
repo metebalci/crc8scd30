@@ -8,6 +8,7 @@ int main() {
 
   if (crc8scd30(NULL, 0) != 0xFF) {
     printf("crc of null input failed\n");
+    return EXIT_FAILURE;
   } else {
     printf("crc of null input OK\n");
   }
@@ -17,6 +18,7 @@ int main() {
   uint8_t crc_beef = crc8scd30(beef, 2);
   if (crc_beef != 0x92) {
     printf("crc of 0xBEEF failed\n");
+    return EXIT_FAILURE;
   } else {
     printf("crc of 0xBEEF OK\n");
   }
@@ -26,6 +28,7 @@ int main() {
   uint8_t crc_fv = crc8scd30(fv, 2);
   if (crc_fv != 0xF3) {
     printf("crc of read firmware version failed\n");
+    return EXIT_FAILURE;
   } else {
     printf("crc of read firmware version OK\n");
   }
@@ -33,5 +36,4 @@ int main() {
   return EXIT_SUCCESS;
 
 }
-
 
