@@ -1,5 +1,7 @@
 # Description
 
+[![Build Status](https://travis-ci.com/metebalci/crc8scd30.svg?branch=master)](https://travis-ci.com/metebalci/crc8scd30)
+
 This repo contains the CRC algorithm used in I2C interface of Sensirion SCD30 Sensor Module.
 
 https://www.sensirion.com/en/environmental-sensors/carbon-dioxide-sensors-co2/
@@ -35,6 +37,6 @@ with this command:
 echo "width=8 poly=0x31 init=0xff refin=false refout=false xorout=0x00 check=0xf7 residue=0x00 name=scd30" | ./crcgen
 ```
 
-Then I modified these files, removed the parts that are not related to SCD30 and changed the types.
+Then, I modified these files, removed the parts that are not related to SCD30 and changed the types. They conform to c11. 
 
-You need only these two files (crc8scd30.c and .h) in your project. See test.c for an example, and you can run `make` in this repo for a quick test.
+You need only these two files (crc8scd30.c and .h) in your project. See test.c for test vectors.
