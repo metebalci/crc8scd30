@@ -12,13 +12,6 @@ int main() {
     printf("crc of null input OK\n");
   }
 
-  uint8_t empty[0];
-  if (crc8scd30(empty, 0) != 0xFF) {
-    printf("crc of empty input failed\n");
-  } else {
-    printf("crc of empty input OK\n");
-  }
-
   // from crc algorithm properties
   uint8_t beef[] = {0xBE, 0xEF};
   uint8_t crc_beef = crc8scd30(beef, 2);
